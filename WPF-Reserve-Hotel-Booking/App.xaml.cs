@@ -28,8 +28,8 @@ namespace WPF_Reserve_Hotel_Booking
                 ));
                 hotel.MakeReservation(new Reservation(
                 new RoomID(1, 2),
-                "John",
-                new DateTime(2000, 1, 1),
+                "Mary",
+                new DateTime(2000, 1, 3),
                 new DateTime(2000, 1, 4)
                 ));
                 //hotel.MakeReservation(new Reservation(
@@ -44,7 +44,7 @@ namespace WPF_Reserve_Hotel_Booking
 
             }
 
-            IEnumerable<Reservation> reservations = hotel.GetReservationsForUser("John");
+            IEnumerable<Reservation> reservations = hotel.GetAllReservations();
             
             base.OnStartup(e);
         }
