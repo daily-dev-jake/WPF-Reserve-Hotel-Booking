@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:WPF_Reserve_Hotel_Booking"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="TextBlock" x:Key="Header">
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
         <Style TargetType="Button">
             <Setter Property="Padding" Value="10 5"/>
         </Style>
