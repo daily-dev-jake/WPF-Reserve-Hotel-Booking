@@ -6,22 +6,14 @@ using System.Threading.Tasks;
 
 namespace WPF_Reserve_Hotel_Booking.Models
 {
-    public class Hotel
+    public class Hotels
     {
         private readonly ReservationBook _reservationBook;
         public string Name { get; }
-        public Hotel( string name)
+        public Hotels( string name)
         {
             Name = name;
             _reservationBook = new ReservationBook();
-        }
-        public IEnumerable<Reservation> GetReservationsForUser(string username)
-        {
-            return _reservationBook.GetReservationsForUser(username);
-        }
-        public void MakeReservation(Reservation reservation)
-        {
-            _reservationBook.AddReservation(reservation);
         }
     }
 }
