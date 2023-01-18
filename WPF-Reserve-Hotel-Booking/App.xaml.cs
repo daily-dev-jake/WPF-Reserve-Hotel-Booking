@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WPF_Reserve_Hotel_Booking.Exceptions;
+using WPF_Reserve_Hotel_Booking.Models;
 
 namespace WPF_Reserve_Hotel_Booking
 {
@@ -43,7 +45,7 @@ namespace WPF_Reserve_Hotel_Booking
             }
 
             IEnumerable<Reservation> reservations = hotel.GetAllReservations();
-            
+
             base.OnStartup(e);
         }
     }
