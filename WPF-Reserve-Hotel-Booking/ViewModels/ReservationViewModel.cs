@@ -1,5 +1,4 @@
-﻿using System;
-using WPF_Reserve_Hotel_Booking.Models;
+﻿using WPF_Reserve_Hotel_Booking.Models;
 
 namespace WPF_Reserve_Hotel_Booking.ViewModels
 {
@@ -9,8 +8,8 @@ namespace WPF_Reserve_Hotel_Booking.ViewModels
 
         public string RoomID => reservation.RoomID?.ToString();
         public string Username => reservation.Username;
-        public DateTime StartDate => reservation.StartDate;
-        public DateTime EndDate => reservation.EndDate;
+        public string StartDate => reservation.StartDate.ToString("d");
+        public string EndDate => reservation.EndDate.ToString("d");
         public ReservationViewModel(Reservation reservation)
         {
             this.reservation = reservation;

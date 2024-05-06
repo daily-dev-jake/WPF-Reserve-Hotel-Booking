@@ -6,7 +6,7 @@ namespace WPF_Reserve_Hotel_Booking.ViewModels
     public class MakeReservationViewModel : ViewModelBase
     {
         private string _userName;
-        public string UserName
+        public string Username
         {
             get { return _userName; }
             set { _userName = value; OnPropertyChanged(nameof(_userName)); }
