@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WPF_Reserve_Hotel_Booking.Models
 {
@@ -15,6 +11,7 @@ namespace WPF_Reserve_Hotel_Booking.Models
         public Reservation(RoomID roomID, string Username, DateTime startDate, DateTime endDate)
         {
             RoomID = roomID;
+            this.Username = Username;
             StartDate = startDate;
             EndDate = endDate;
         }
