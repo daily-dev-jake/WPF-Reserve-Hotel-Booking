@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
+using WPF_Reserve_Hotel_Booking.Commands;
+using WPF_Reserve_Hotel_Booking.Models;
+using WPF_Reserve_Hotel_Booking.Stores;
 
 namespace WPF_Reserve_Hotel_Booking.ViewModels
 {
@@ -23,13 +26,13 @@ namespace WPF_Reserve_Hotel_Booking.ViewModels
             get { return _floorNumber; }
             set { _floorNumber = value; OnPropertyChanged(nameof(_floorNumber)); }
         }
-        private DateTime _startDate;
+        private DateTime _startDate = DateTime.UtcNow;
         public DateTime StartDate
         {
             get { return _startDate; }
             set { _startDate = value; OnPropertyChanged(nameof(_startDate)); }
         }
-        private DateTime _endDate;
+        private DateTime _endDate = DateTime.UtcNow;
         public DateTime EndDate
         {
             get { return _endDate; }
@@ -37,9 +40,10 @@ namespace WPF_Reserve_Hotel_Booking.ViewModels
         }
         public ICommand SubmitCommand { get; }
         public ICommand CancelCommand { get; }
-        public MakeReservationViewModel()
+        public MakeReservationViewModel(Hotel hotel, NavigationStore navigationStore, Func<ReservationListingViewModel> createReservationViewModel)
         {
-
+            SubmitCommand = new MakeReservationCommand(this, hotel);
+            CancelCommand = new NavigateCommand(navigationStore, createReservationViewModel);
         }
     }
 }
